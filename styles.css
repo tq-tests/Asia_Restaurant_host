@@ -1,0 +1,440 @@
+/* Grundlegende Variablen für Farben und Werte */
+:root {
+  /* Hauptfarbe: Dunkelrot für Akzente und Titel */
+  --primary-color: #800000;
+  /* Akzentfarbe: Gold für Buttons und Linien */
+  --accent-color: #d4af37;
+  /* Hintergrundfarbe: Helles Beige für den Seitenhintergrund */
+  --bg-color: #fff8e7;
+  /* Standardtextfarbe: Dunkelgrau für gute Lesbarkeit */
+  --text-color: #333333;
+  /* Weiß für Text auf dunklem Grund */
+  --white: #ffffff;
+  /* Standard-Schatten für Karten und Container */
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Radius für abgerundete Ecken */
+  --radius: 12px;
+}
+
+
+
+/* Grundlegende Seiteneinstellungen: Schriftart, Hintergrund, Textfarbe */
+body {
+  /* Schriftart: Moderne, gut lesbare Sans-Serif-Schrift */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* Setzt den Hintergrund auf die definierte Beige-Farbe */
+  background-color: var(--bg-color);
+  /* Setzt die Textfarbe auf Dunkelgrau */
+  color: var(--text-color);
+  /* Zeilenhöhe für besseren Lesefluss */
+  line-height: 1.6;
+}
+
+/* --- Header --- */
+
+.video_container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.video_container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+.video_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Farbton */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.header-main {
+  /* Textfarbe: Weiß für Kontrast zum roten Hintergrund */
+  color: var(--white);
+  /* Zentriert die Inhalte im Header */
+  text-align: center;
+  /* Große Innenabstände für den Kopfbereich */
+}
+
+.header-main h1 {
+  /* Sehr große Schrift für den Titel */
+  font-size: 3.5rem;
+  /* Abstand nach unten vor dem Slogan */
+  margin-bottom: 10px;
+  /* Goldenehttp://127.0.0.1:5500/index.html Farbe für den Titel */
+  color: var(--accent-color);
+  /* Leichter Schatten für 3D-Effekt des Textes */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slogan {
+  /* Mittlere Schriftgröße für den Untertitel */
+  font-size: 1.2rem;
+  /* Kursivschrift für stilistische Akzente */
+  font-style: italic;
+  /* Abstand vor dem Bild */
+  margin-bottom: 20px;
+}
+
+.hero-image img {
+  /* Maximale Breite: 100% des Containers, aber max. 900px */
+  max-width: 100%;
+  width: 900px;
+  /* Feste Höhe für einheitliche Größe */
+  height: 450px;
+  /* object-fit: Bild wird zugeschnitten, um den Platz auszufüllen, ohne zu verzerrn */
+  object-fit: cover;
+  /* Abgerundete Ecken für das Bild */
+  border-radius: var(--radius);
+  /* Goldener Rahmen um das Bild */
+  border: 2px solid var(--accent-color);
+  /* Zentriert das Bild horizontall (auto links/rechts), 20px Abstand unten */
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.cta-button {
+  
+  /* Goldener Hintergrund */
+  background-color: var(--accent-color);
+  /* Dunkelrote Schriftfarbe für Kontrast */
+  color: var(--primary-color);
+  /* Innenabstand für größeren Klickbereich */
+  padding: 12px 24px;
+  /* Entfernt die Unterstreichung von Links */
+  text-decoration: none;
+  /* Fettgedruckter Text */
+  font-weight: bold;
+  /* Stark abgerundete Ecken (Pill-Form) */
+  border-radius: 30px;
+  /* Übergänge für Hover-Effekte: Größe und Farbe über 0.3s */
+  transition:
+    transform 0.3s,
+    background-color 0.3s;
+}
+
+.cta-button:hover {
+  /* Hover: Button wird 5% größer */
+  transform: scale(1.05);
+  /* Hover: Hintergrund wird weiß */
+  background-color: #fff;
+}
+
+/* --- Navigation --- */
+.navigation {
+  /* Schwarzer Hintergrund für die Leiste */
+  background-color: #333;
+  /* Sticky: Leiste bleibt beim Scrollen oben kleben */
+  position: sticky;
+  /* Positioniert die Leiste 0px von oben entfernt */
+  top: 0;
+  /* Z-Index: Leiste liegt über anderen Inhalten */
+  z-index: 100;
+  /* Flexbox: Zentriert die Links horizontal */
+  display: flex;
+  justify-content: center;
+  /* Geringer Abstand oben und unten */
+  padding: 10px 0;
+  /* Leichter Schatten für räumliche Tiefe */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navigation a {
+  /* Weiße Textfarbe */
+  color: var(--white);
+  /* Keine Unterstreichung */
+  text-decoration: none;
+  /* Innenabstand für Klickfläche */
+  padding: 10px 20px;
+  /* Mittelgroße Schriftgröße */
+  font-size: 1.1rem;
+  /* Weicher Farbwechsel beim Hover über 0.3s */
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  /* Hover: Text wird gold */
+  color: var(--accent-color);
+  /* Hover: Leichter weißer Hintergrund */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Abgerundete Ecken für den Hover-Zustand */
+  border-radius: 5px;
+}
+
+/* --- Hauptinhalt --- */
+main {
+  /* Maximale Breite der Seite: 1200px */
+  max-width: 1600px;
+  /* Zentriert den Main-Bereich auf der Seite */
+  margin: 40px auto;
+  /* Seitenabstand für Abstand zum Bildschirmrand */
+  padding: 0 20px;
+}
+
+.content-section {
+  /* Großer Abstand zwischen den Abschnitten */
+  margin-bottom: 60px;
+  /* Innenabstand für den Inhalt */
+  padding: 30px;
+  /* Weißer Hintergrund für den Karten-Effekt */
+  background-color: var(--white);
+  /* Abgerundete Ecken */
+  border-radius: var(--radius);
+  /* Schatten für räumliche Tiefe */
+  box-shadow: var(--shadow);
+  /* Dünner grauer Rahmen */
+  border: 1px solid #e0e0e0;
+}
+
+.content-section h2 {
+  /* Hauptfarbe Dunkelrot für Überschriften */
+  color: var(--primary-color);
+  /* Goldene Unterstreichung */
+  border-bottom: 2px solid var(--accent-color);
+  /* Abstand unten vor dem Text */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  /* Große Schrift für Überschriften */
+  font-size: 2.2rem;
+}
+
+.text-block {
+  /* Mittelgroße Schrift für Fließtext */
+  font-size: 1.1rem;
+}
+
+/* --- Speisekarten-Karten MIT Bild --- */
+
+.menu-card {
+  /* Breite: 300px, darf nicht schrumpfen oder wachsen */
+  flex: 0 0 300px;
+  /* scroll-snap: Karte rastet beim Scrollen exakt ein */
+  scroll-snap-align: center;
+  /* Weißer Hintergrund */
+  background-color: #fff;
+  /* Goldener Rand */
+  border: 1px solid var(--accent-color);
+  /* Abgerundete Ecken */
+  border-radius: var(--radius);
+  /* Innenabstand */
+  padding: 20px;
+  /* Schatten */
+  box-shadow: var(--shadow);
+  /* Transition: Weicher Übergang für Hover-Effekte */
+  transition: transform 0.3s;
+  /* Flexbox: Inhalt von oben nach unten anordnen */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-card:hover {
+  /* Hover: Karte rückt nach unten (Plus = tiefer) */
+  transform: translateX(
+    3px
+  ); /* Hinweis: Dies ist die aktuelle Zeile, s. Kommentar unten */
+  /* Hover: Schatten wird stärker */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  /* Hover: Leichter cremefarbener Hintergrund */
+  background-color: #fffef0;
+}
+
+/* 
+   Anmerkung zur transform-Logik:
+   translateY(-5px) wäre nach oben (Minus = höher)
+   translateY(8px) wäre nach unten (Plus = tiefer)
+   translateX(8px) wäre nach rechts (seitlich)
+   
+*/
+
+.card-image {
+  /* Breite: 100% des Containers */
+  width: 100%;
+  /* Feste Höhe für einheitliche Bildgröße */
+  height: 200px;
+  /* Bild wird zugeschnitten (object-fit), um nicht zu verzerrn */
+  object-fit: cover;
+  /* Block-Element für korrekte Abstände */
+  display: block;
+}
+
+.card-carousel {
+  /* Flexbox: Elemente nebeneinander */
+  display: flex;
+  flex-direction: row;
+  /* Seitliches Scrollen aktivieren */
+  overflow-x: auto;
+  /* Scroll-Snap: Zwang zum Einrasten auf X-Achse */
+  scroll-snap-type: x mandatory;
+  /* Abstand zwischen den Karten */
+  gap: 20px;
+}
+
+/* Innerer Container für Text und Preis */
+.card-body {
+  padding: 20px;
+  /* Flexbox: Vertikale Ausrichtung */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  /* Dunkelrote Überschriften in der Karte */
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  /* Dehnt sich aus, um den Preis nach unten zu drücken */
+  flex-grow: 1;
+}
+
+.price {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: right;
+}
+
+/* Duplizierte Regeln (entfernen empfohlen, da redundant) */
+.menu-card h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.menu-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.price {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: right;
+}
+
+/* --- Galerie --- */
+.gallery-container {
+  /* Flexbox für nebeneinanderliegende Bilder */
+  display: flex;
+  gap: 30px;
+  /* Umschlag bei zu wenig Platz (Responsive) */
+  flex-wrap: wrap;
+  /* Zentriert die Bilder */
+  justify-content: center;
+}
+
+.gallery-img {
+  /* Flex-Basis: Mindestens 300px, aber maximal 500px breit */
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.gallery-img img {
+  /* Breite: 100% */
+  width: 100%;
+  /* Seitenverhältnis: 4 zu 3 (Höhe berechnet sich automatisch) */
+  aspect-ratio: 4 / 3;
+  display: block;
+  border-radius: var(--radius);
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Unterschiedliche Klassen für Bilder */
+.radius-img img {
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.frame-img img {
+  border: 8px solid var(--accent-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Öffnungszeiten --- */
+.opening-hours-list {
+  list-style: none;
+  font-size: 1.1rem;
+}
+
+.opening-hours-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+.opening-hours-list li:last-child {
+  border-bottom: none;
+}
+
+/* --- Kontakt --- */
+.contact-block {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid #ddd;
+}
+
+.contact-block p {
+  margin-bottom: 10px;
+}
+
+.link-to-map {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #333;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 3px solid var(--accent-color);
+}
+
+footer nav {
+  display: inline-block;
+}
+
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
